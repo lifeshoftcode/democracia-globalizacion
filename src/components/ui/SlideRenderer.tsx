@@ -21,6 +21,12 @@ interface Block {
   alt?: string;
   caption?: string;
   participants?: Array<{ name: string; topic: string; code?: string }>;
+  cards?: Array<{ 
+    title: string; 
+    content: string[]; 
+    highlight?: string; 
+    icon?: string; 
+  }>;
 }
 
 interface Slide {

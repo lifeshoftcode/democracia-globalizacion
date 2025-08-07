@@ -1,0 +1,25 @@
+{
+  "_comment": "Config para proteger archivos importantes y ajustar el escaneo.",
+  "protectedGlobs": [
+    "src/app/**/page.tsx",
+    "src/app/**/layout.tsx",
+    "src/app/**/template.tsx",
+    "src/app/**/route.ts",
+    "src/app/**/error.tsx",
+    "src/app/**/loading.tsx",
+    "src/app/**/default.tsx",
+    "src/app/**/not-found.tsx",
+    "src/app/**/sitemap.ts",
+    "src/app/**/robots.ts",
+    "src/app/**/manifest.ts",
+    "src/pages/**/*.{ts,tsx,js,jsx}",
+    "src/data/**/*"
+  ],
+  "protectedRegex": [
+    "\\\\src\\\\app\\\\presentacion\\\\.*\\\\page\\.tsx$"
+  ],
+  "ignoreDirs": ["node_modules", ".next", "dist", "build", "coverage", ".git"],
+  "extensions": ["ts", "tsx", "js", "jsx"],
+  "quarantineDir": ".quarantine",
+  "deleteMode": "quarantine"
+}

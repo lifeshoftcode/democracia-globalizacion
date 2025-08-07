@@ -104,50 +104,148 @@ const sectionSociedadNoPolitica = {
       ],
     },
 
-    // SLIDE 4 — Impactos típicos (positivos y riesgos) en split
-    {
-      layout: SlideLayouts.SPLIT,
-      blocks: [
-        {
-          kind: BlockKinds.SPLIT,
-          title: "Impactos en la calidad democrática",
-          left: {
-            heading: "Aportes",
-            items: [
-              "Más transparencia y rendición de cuentas.",
-              "Mayor inclusión de grupos históricamente excluidos.",
-              "Alertas tempranas ante abusos o retrocesos.",
-              "Mejor evidencia para decidir (investigación/academia).",
-            ],
-          },
-          right: {
-            heading: "Riesgos / límites",
-            items: [
-              "Captura o cooptación por élites y financiamiento opaco.",
-              "Desinformación y pérdida de confianza pública.",
-              "Fragmentación y duplicidad de esfuerzos.",
-              "Criminalización o restricciones a OSC y prensa.",
-            ],
-          },
-        },
-      ],
-    },
-
-    // SLIDE 5 — Buenas prácticas + Cierre (todo en una lámina)
+    // SLIDE 4 — Impactos típicos (positivos y riesgos) en tarjetas
     {
       layout: SlideLayouts.STACK,
       blocks: [
         {
-          kind: BlockKinds.BULLETS,
-          title: "Buenas prácticas para potenciar su aporte",
-          items: [
-            "Registros y normas claras para OSC, con transparencia financiera.",
-            "Protección a periodistas y defensores de DD. HH.",
-            "Mesas mixtas Estado–academia–OSC para co-crear políticas.",
-            "Ecosistemas de datos abiertos y evaluación independiente.",
-            "Formación cívica continua y participación inclusiva.",
+          kind: BlockKinds.CARDS_GRID,
+          title: "Impactos en la calidad democrática",
+          cards: [
+            {
+              title: "Transparencia y rendición de cuentas",
+              content: [
+                "Mayor visibilidad del gasto público y decisiones gubernamentales",
+                "Mecanismos de control ciudadano más efectivos"
+              ],
+              highlight: "positive",
+              icon: "🔍"
+            },
+            {
+              title: "Inclusión de grupos excluidos",
+              content: [
+                "Voz a minorías y sectores históricamente marginados",
+                "Representación más diversa en la toma de decisiones"
+              ],
+              highlight: "positive",
+              icon: "🤝"
+            },
+            {
+              title: "Alertas tempranas",
+              content: [
+                "Detección temprana de abusos de poder",
+                "Prevención de retrocesos democráticos"
+              ],
+              highlight: "positive",
+              icon: "⚠️"
+            },
+            {
+              title: "Evidencia para políticas",
+              content: [
+                "Investigación académica para mejores leyes",
+                "Datos objetivos para la toma de decisiones"
+              ],
+              highlight: "positive",
+              icon: "📊"
+            },
+            {
+              title: "Captura y cooptación",
+              content: [
+                "Riesgo de financiamiento opaco por élites",
+                "Pérdida de independencia e integridad"
+              ],
+              highlight: "negative",
+              icon: "⚡"
+            },
+            {
+              title: "Desinformación",
+              content: [
+                "Propagación de noticias falsas",
+                "Erosión de la confianza pública en instituciones"
+              ],
+              highlight: "negative",
+              icon: "📢"
+            },
+            {
+              title: "Fragmentación",
+              content: [
+                "Duplicidad de esfuerzos entre organizaciones",
+                "Falta de coordinación y coherencia"
+              ],
+              highlight: "negative",
+              icon: "🔀"
+            },
+            {
+              title: "Criminalización",
+              content: [
+                "Restricciones legales a OSC y prensa libre",
+                "Persecución de defensores de derechos humanos"
+              ],
+              highlight: "negative",
+              icon: "🚫"
+            }
           ],
         },
+      ],
+    },
+
+    // SLIDE 5 — Buenas prácticas (en tarjetas)
+    {
+      layout: SlideLayouts.STACK,
+      blocks: [
+        {
+          kind: BlockKinds.CARDS_GRID,
+          title: "Buenas prácticas para potenciar su aporte",
+          cards: [
+            {
+              title: "Marcos normativos claros",
+              content: [
+                "Registros transparentes para OSC con transparencia financiera obligatoria"
+              ],
+              highlight: "positive",
+              icon: "📋"
+            },
+            {
+              title: "Protección de defensores",
+              content: [
+                "Garantías legales para periodistas y defensores de DD. HH."
+              ],
+              highlight: "positive",
+              icon: "🛡️"
+            },
+            {
+              title: "Espacios de colaboración",
+              content: [
+                "Mesas mixtas Estado–academia–OSC para co-crear políticas"
+              ],
+              highlight: "positive",
+              icon: "🤝"
+            },
+            {
+              title: "Ecosistemas de datos",
+              content: [
+                "Plataformas de datos abiertos y sistemas de evaluación independiente"
+              ],
+              highlight: "positive",
+              icon: "📊"
+            },
+            {
+              title: "Educación cívica",
+              content: [
+                "Formación cívica continua y participación inclusiva"
+              ],
+              highlight: "positive",
+              icon: "📚"
+            }
+          ],
+        },
+      ],
+    },
+
+    // SLIDE 6 — Cierre
+    {
+      layout: SlideLayouts.STACK,
+      blocks: [
         {
           kind: BlockKinds.CONCLUSION,
           title: "Cierre",

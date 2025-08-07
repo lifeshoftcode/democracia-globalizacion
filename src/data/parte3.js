@@ -37,66 +37,117 @@ const sectionRosanny = {
       ],
     },
 
-    // SLIDE 3 — Principios Fundamentales Parte 1 (usando TABS)
+    // SLIDE 3 — Principios Fundamentales (en tarjetas)
     {
-      layout: SlideLayouts.TABS,
+      layout: SlideLayouts.STACK,
       blocks: [
         {
-          kind: BlockKinds.TABS,
-          title: "Principios Fundamentales - Parte 1",
-          tabs: [
+          kind: BlockKinds.CARDS_GRID,
+          title: "Principios Fundamentales de la Democracia",
+          cards: [
             {
-              label: "Soberanía y Participación",
-              blocks: [
-                {
-                  kind: BlockKinds.BULLETS,
-                  items: [
-                    "Soberanía popular — El poder reside en el pueblo, ejercido directa o indirectamente mediante elecciones libres.",
-                    "Participación ciudadana — Derecho de todos a participar en la vida política: voto, postulación, partidos y libre expresión.",
-                    "Igualdad ante la ley — Mismos derechos y deberes sin discriminación por raza, género, religión, ideología, condición social u orientación sexual.",
-                  ],
-                },
+              title: "Soberanía popular",
+              content: [
+                "El poder reside en el pueblo",
+                "Ejercido directa o indirectamente mediante elecciones libres"
               ],
+              highlight: "positive",
+              icon: "👑"
             },
             {
-              label: "Estado de Derecho",
-              blocks: [
-                {
-                  kind: BlockKinds.BULLETS,
-                  items: [
-                    "Estado de derecho — Todos sometidos a la ley; instituciones independientes que la aplican con justicia, incluidos los gobernantes.",
-                    "Respeto a los derechos humanos — Protección de libertades fundamentales: expresión, prensa, asociación, vida, educación y justicia.",
-                    "Pluralismo político — Reconocimiento y respeto de partidos, ideologías y puntos de vista diversos; no se impone una sola visión.",
-                  ],
-                },
+              title: "Participación ciudadana",
+              content: [
+                "Derecho de todos a participar en la vida política",
+                "Voto, postulación, partidos y libre expresión"
               ],
+              highlight: "positive",
+              icon: "🗳️"
             },
+            {
+              title: "Igualdad ante la ley",
+              content: [
+                "Mismos derechos y deberes para todos",
+                "Sin discriminación por raza, género, religión o condición social"
+              ],
+              highlight: "positive",
+              icon: "⚖️"
+            },
+            {
+              title: "Estado de derecho",
+              content: [
+                "Todos sometidos a la ley, incluidos los gobernantes",
+                "Instituciones independientes que aplican justicia"
+              ],
+              highlight: "positive",
+              icon: "🏛️"
+            },
+            {
+              title: "Derechos humanos",
+              content: [
+                "Protección de libertades fundamentales",
+                "Expresión, prensa, asociación, vida, educación y justicia"
+              ],
+              highlight: "positive",
+              icon: "🛡️"
+            },
+            {
+              title: "Pluralismo político",
+              content: [
+                "Reconocimiento de partidos e ideologías diversas",
+                "No se impone una sola visión política"
+              ],
+              highlight: "positive",
+              icon: "🌈"
+            }
           ],
         },
       ],
     },
 
-    // SLIDE 4 — Principios Fundamentales Parte 2 (usando TABS)
+    // SLIDE 4 — Principios Operativos (en tarjetas)
     {
-      layout: SlideLayouts.TABS,
+      layout: SlideLayouts.STACK,
       blocks: [
         {
-          kind: BlockKinds.TABS,
-          title: "Principios Fundamentales - Parte 2",
-          tabs: [
+          kind: BlockKinds.CARDS_GRID,
+          title: "Principios Operativos para la Democracia",
+          cards: [
             {
-              label: "Transparencia y Cultura",
-              blocks: [
-                {
-                  kind: BlockKinds.BULLETS,
-                  items: [
-                    "Elecciones libres y periódicas — Comicios limpios, transparentes y competitivos; garantías para candidatos y respeto al voto.",
-                    "Transparencia y rendición de cuentas — Autoridades informan, permiten control ciudadano y responden ante la justicia por abusos.",
-                    "Tolerancia y cultura democrática — Convivencia con respeto, diálogo y educación en valores democráticos.",
-                  ],
-                },
+              title: "Elecciones libres",
+              content: [
+                "Comicios limpios, transparentes y competitivos",
+                "Garantías para candidatos y respeto al voto"
               ],
+              highlight: "positive",
+              icon: "🗳️"
             },
+            {
+              title: "Transparencia",
+              content: [
+                "Autoridades informan sobre sus decisiones",
+                "Acceso ciudadano a información pública"
+              ],
+              highlight: "positive",
+              icon: "🔍"
+            },
+            {
+              title: "Rendición de cuentas",
+              content: [
+                "Control ciudadano sobre las autoridades",
+                "Responden ante la justicia por abusos"
+              ],
+              highlight: "positive",
+              icon: "📊"
+            },
+            {
+              title: "Cultura democrática",
+              content: [
+                "Convivencia con respeto y diálogo",
+                "Educación en valores democráticos"
+              ],
+              highlight: "positive",
+              icon: "🤝"
+            }
           ],
         },
       ],

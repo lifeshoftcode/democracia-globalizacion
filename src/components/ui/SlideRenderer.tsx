@@ -375,6 +375,59 @@ export function SlideRenderer({ slide, className = "" }: SlideRendererProps) {
           </motion.div>
         );
 
+      case 'cards_grid':
+        return (
+          <motion.div
+            key={index}
+            custom={index}
+            variants={blockVariants}
+            initial="hidden"
+            animate="visible"
+            className="space-y-6"
+          >
+            {block.title && (
+              <h2 className="text-3xl font-bold text-white text-center mb-8">
+                {block.title}
+              </h2>
+            )}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {block.cards?.map((card, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: (index * 0.1) + (i * 0.1) }}
+                  className={`backdrop-blur-sm rounded-lg p-4 border transition-all duration-300 ${
+                    card.highlight === 'positive' 
+                      ? 'bg-green-500/10 border-green-400/30 hover:bg-green-500/20' 
+                      : card.highlight === 'negative'
+                      ? 'bg-red-500/10 border-red-400/30 hover:bg-red-500/20'
+                      : 'bg-white/10 border-white/20 hover:bg-white/20'
+                  }`}
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      {card.icon && (
+                        <span className="text-2xl">{card.icon}</span>
+                      )}
+                      <h3 className="text-xl font-semibold text-white">
+                        {card.title}
+                      </h3>
+                    </div>
+                    <div className="space-y-2">
+                      {card.content.map((item, itemIndex) => (
+                        <p key={itemIndex} className="text-white/80 text-lg leading-relaxed">
+                          • {item}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        );
+
       default:
         return (
           <div key={index} className="text-white text-center">

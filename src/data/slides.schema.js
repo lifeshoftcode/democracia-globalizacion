@@ -21,6 +21,7 @@ export const BlockKinds = {
   QUOTE: "quote",        // { text, cite? }
   CONCLUSION: "conclusion", // { title?, text, highlight? } - Para cierres y conclusiones especiales
   PARTICIPANTS_GRID: "participants_grid", // { title?, participants: [{name, topic, code?}] }
+  CARDS_GRID: "cards_grid", // { title?, cards: [{title, content, highlight?, icon?}] }
 };
 
 export const SlideLayouts = {
@@ -91,7 +92,14 @@ export const SlideLayouts = {
  */
 
 /**
- * @typedef {CoverBlock|ParagraphBlock|BulletsBlock|SplitBlock|TabsBlock|ImageBlock|QuoteBlock} Block
+ * @typedef {Object} CardsGridBlock
+ * @property {'cards_grid'} kind
+ * @property {string=} title
+ * @property {{title:string, content:string[], highlight?:string, icon?:string}[]} cards
+ */
+
+/**
+ * @typedef {CoverBlock|ParagraphBlock|BulletsBlock|SplitBlock|TabsBlock|ImageBlock|QuoteBlock|CardsGridBlock} Block
  */
 
 /**

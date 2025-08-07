@@ -78,57 +78,117 @@ const sectionJohany = {
       ],
     },
 
-    // SLIDE 3 — Influencia y Desafíos (usando TABS)
+    // SLIDE 3 — Influencias positivas de la globalización
     {
-      layout: SlideLayouts.TABS,
+      layout: SlideLayouts.STACK,
       blocks: [
         {
-          kind: BlockKinds.TABS,
-          title: "Democracia en el mundo globalizado",
-          tabs: [
+          kind: BlockKinds.PARAGRAPH,
+          title: "Influencias positivas de la globalización",
+          text:
+            "La globalización ha creado nuevas oportunidades para fortalecer y expandir los valores democráticos a nivel mundial.",
+        },
+        {
+          kind: BlockKinds.CARDS_GRID,
+          title: "¿Cómo beneficia la globalización a la democracia?",
+          cards: [
             {
-              label: "Influencia",
-              blocks: [
-                {
-                  kind: BlockKinds.PARAGRAPH,
-                  text:
-                    "La globalización difunde principios democráticos, multiplica redes y acelera flujos de información que impactan la política.",
-                },
-                {
-                  kind: BlockKinds.BULLETS,
-                  items: [
-                    "Expansión de valores democráticos y fortalecimiento de redes pro-DD. HH.",
-                    "Democratización de la información: internet/redes facilitan fiscalización y organización.",
-                    "Interdependencia política y económica: decisiones de un país repercuten globalmente.",
-                  ],
-                },
+              title: "Expansión democrática",
+              content: [
+                "Difusión global de valores democráticos",
+                "Fortalecimiento de redes pro-derechos humanos"
               ],
+              highlight: "positive",
+              icon: "🌍"
             },
             {
-              label: "Desafíos",
-              blocks: [
-                {
-                  kind: BlockKinds.PARAGRAPH,
-                  text:
-                    "Junto a los avances, emergen retos que tensionan la representación, las instituciones y la calidad del debate público.",
-                },
-                {
-                  kind: BlockKinds.BULLETS,
-                  items: [
-                    "Crisis de representación: desconfianza hacia partidos tradicionales.",
-                    "Populismo y autoritarismo: concentración de poder y debilitamiento institucional.",
-                    "Desigualdad social: beneficios asimétricos que afectan la estabilidad democrática.",
-                    "Ciberpolítica: desinformación, bots y manipulación digital de percepciones.",
-                  ],
-                },
+              title: "Democratización digital",
+              content: [
+                "Internet facilita fiscalización ciudadana",
+                "Redes sociales permiten mejor organización cívica"
               ],
+              highlight: "positive",
+              icon: "💻"
             },
+            {
+              title: "Interdependencia global",
+              content: [
+                "Decisiones nacionales repercuten mundialmente",
+                "Cooperación internacional en temas comunes"
+              ],
+              highlight: "positive",
+              icon: "🔗"
+            },
+            {
+              title: "Acceso a información",
+              content: [
+                "Mayor transparencia en procesos políticos",
+                "Ciudadanía mejor informada para decidir"
+              ],
+              highlight: "positive",
+              icon: "📡"
+            }
           ],
         },
       ],
     },
 
-    // SLIDE 4 — Cierre
+    // SLIDE 4 — Desafíos de la globalización
+    {
+      layout: SlideLayouts.STACK,
+      blocks: [
+        {
+          kind: BlockKinds.PARAGRAPH,
+          title: "Desafíos de la globalización",
+          text:
+            "Junto a los avances, emergen retos significativos que tensionan la representación, las instituciones y la calidad del debate democrático.",
+        },
+        {
+          kind: BlockKinds.CARDS_GRID,
+          title: "¿Qué amenazas presenta la globalización?",
+          cards: [
+            {
+              title: "Crisis de representación",
+              content: [
+                "Creciente desconfianza hacia partidos tradicionales",
+                "Brecha entre élites políticas y ciudadanía"
+              ],
+              highlight: "negative",
+              icon: "🏛️"
+            },
+            {
+              title: "Populismo y autoritarismo",
+              content: [
+                "Concentración excesiva de poder ejecutivo",
+                "Debilitamiento de instituciones democráticas"
+              ],
+              highlight: "negative",
+              icon: "⚡"
+            },
+            {
+              title: "Desigualdad social",
+              content: [
+                "Beneficios asimétricos de la globalización",
+                "Tensiones que afectan estabilidad democrática"
+              ],
+              highlight: "negative",
+              icon: "📊"
+            },
+            {
+              title: "Ciberpolítica tóxica",
+              content: [
+                "Desinformación y manipulación digital",
+                "Bots y algoritmos distorsionan debate público"
+              ],
+              highlight: "negative",
+              icon: "🤖"
+            }
+          ],
+        },
+      ],
+    },
+
+    // SLIDE 5 — Cierre
     {
       layout: SlideLayouts.STACK,
       blocks: [

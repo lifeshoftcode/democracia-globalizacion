@@ -36,7 +36,15 @@ export function NavigationHelp({ show, supportsTouch, supportsGamepad }: Navigat
           
           <div className="space-y-3 text-sm">
             {/* Controles básicos */}
-          
+            <div className="bg-white/10 rounded-lg p-3">
+              <h4 className="font-semibold mb-2">⌨️ Teclado</h4>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <span>← →</span><span>Navegar</span>
+                <span>F</span><span>Pantalla completa</span>
+                <span>ESC</span><span>Salir pantalla completa</span>
+                <span>Home</span><span>Ir al inicio</span>
+              </div>
+            </div>
 
             {/* Touch */}
             {supportsTouch && (
@@ -62,10 +70,14 @@ export function NavigationHelp({ show, supportsTouch, supportsGamepad }: Navigat
 
             {/* Controles remotos */}
             <div className="bg-white/10 rounded-lg p-3">
-              <h4 className="font-semibold mb-2">📱 Control Remoto</h4>
-              <div className="text-xs text-center">
+              <h4 className="font-semibold mb-2">📱 Control & Pantalla</h4>
+              <div className="grid grid-cols-2 gap-2 text-xs mb-2">
+                <span>Control remoto</span><span>Funciona como ← →</span>
+                <span>Botón pantalla</span><span>Pantalla completa</span>
+              </div>
+              <div className="text-xs text-center text-white/70">
                 La mayoría de controles remotos de presentación funcionan 
-                como teclas de flecha estándar
+                automáticamente con esta aplicación
               </div>
             </div>
           </div>

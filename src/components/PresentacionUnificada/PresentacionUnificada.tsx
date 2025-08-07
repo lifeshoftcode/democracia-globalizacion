@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useControlsVisibility } from '@/hooks/useControlsVisibility';
+import { useMultiDeviceNavigation } from '@/hooks/useMultiDeviceNavigation';
 
 // Type definitions
 interface Slide {
@@ -104,37 +105,34 @@ export function PresentacionUnificada() {
     }
   }, [page]);
 
-  // Navegación con teclado
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') paginate(-1);
-      if (e.key === 'ArrowRight') paginate(1);
-      if (e.key === 'Escape') {
-        // Si está en pantalla completa, salir; si no, reiniciar presentación
-        if (document.fullscreenElement) {
-          document.exitFullscreen();
-        } else {
-          setPage([0, -1]);
-        }
-      }
-      if (e.key === 'Home') {
-        // Ir al inicio
-        setPage([0, -1]);
-      }
-      if (e.key === 'F11' || (e.key === 'f' && (e.ctrlKey || e.metaKey))) {
-        // Alternar pantalla completa con F11 o Ctrl+F
-        e.preventDefault();
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen();
-        } else {
-          document.exitFullscreen();
-        }
-      }
-    };
+  const handleRestart = useCallback(() => {
+    setPage([0, -1]);
+  }, []);
 
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [paginate]);
+  const handleGoToLast = useCallback(() => {
+    setPage([todosLosSlides.length - 1, 1]);
+  }, []);
+
+  const toggleFullscreen = useCallback(async () => {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch (error) {
+      console.error('Error al cambiar modo de pantalla:', error);
+    }
+  }, []);
+
+  // Usar el hook de navegación multi-dispositivo
+  useMultiDeviceNavigation({
+    onNext: () => paginate(1),
+    onPrevious: () => paginate(-1),
+    onFirst: handleRestart,
+    onLast: handleGoToLast,
+    onToggleFullscreen: toggleFullscreen
+  });
 
   const currentSlide = todosLosSlides[page];
   const currentInvestigacion = investigaciones[currentSlide.investigacionIndex];
@@ -146,10 +144,6 @@ export function PresentacionUnificada() {
   // Determinar si es el primer slide de una nueva investigación
   const esInicioDeInvestigacion = currentSlide.slideIndexEnInvestigacion === 0;
   const mostrarTransicion = esInicioDeInvestigacion && currentSlide.investigacionIndex > 0;
-
-  const handleRestart = () => {
-    setPage([0, -1]);
-  };
 
   return (
     <div className={`relative h-screen w-full bg-gradient-to-br ${currentSlide.gradiente} overflow-hidden transition-all duration-1000`}>

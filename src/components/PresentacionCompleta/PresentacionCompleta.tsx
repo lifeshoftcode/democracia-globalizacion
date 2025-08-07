@@ -51,7 +51,6 @@ import sectionSociedadNoPolitica from '@/data/parte6';
 // Importar componentes de controles
 import { SimpleNavigation } from './SimpleNavigation';
 import { SimpleProgressBar } from './SimpleProgressBar';
-import { NavigationHelp } from './NavigationHelp';
 import { InvestigationTransition } from '../PresentacionUnificada/components';
 
 const slideVariants = {
@@ -134,7 +133,6 @@ const todosLosSlides = secciones.reduce((acc, seccion, seccionIndex) => {
 export function PresentacionCompleta() {
     const [[page, direction], setPage] = useState([0, 0]);
     const { showControls } = useControlsVisibility(3000);
-    const [showHelp, setShowHelp] = useState(false);
 
     // Control de visibilidad del cursor
     const { resetCursorTimer } = useCursorVisibility({
@@ -172,19 +170,13 @@ export function PresentacionCompleta() {
     };
 
     // Usar el hook de navegación multi-dispositivo
-    const { supportsTouch, supportsGamepad } = useMultiDeviceNavigation({
+    useMultiDeviceNavigation({
         onNext: () => paginate(1),
         onPrevious: () => paginate(-1),
         onFirst: goToFirst,
         onLast: goToLast,
         onToggleFullscreen: toggleFullscreen
     });
-
-    // Mostrar ayuda al inicio
-    useEffect(() => {
-        const timer = setTimeout(() => setShowHelp(true), 2000);
-        return () => clearTimeout(timer);
-    }, []);
 
     const currentSlide = todosLosSlides[page];
 
@@ -268,12 +260,6 @@ export function PresentacionCompleta() {
                 </div>
             )}
 
-            {/* Ayuda de navegación */}
-            <NavigationHelp
-                show={showHelp}
-                supportsTouch={supportsTouch}
-                supportsGamepad={supportsGamepad}
-            />
         </div>
     );
 }

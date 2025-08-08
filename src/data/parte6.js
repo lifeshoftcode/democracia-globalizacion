@@ -6,58 +6,56 @@ const sectionSociedadNoPolitica = {
   participant: { name: "Jonathan Lora", code: "1-23-0430" },
   topic: "Participación de la sociedad no política en los avances de la democracia",
   mainImage: {
-    src: "/images/sociedad-civil-democracia.jpg",
+    src: "/images/sociedad-civil-democracia.png",
     alt: "Sociedad civil, medios y academia colaborando",
   },
   slides: [
-    // SLIDE 1 — Cover
+    // SLIDE 1 — Cover (sin intro redundante)
     {
       layout: SlideLayouts.STACK,
       blocks: [
         {
           kind: BlockKinds.COVER,
           title: "Sociedad no política y democracia",
-          subtitle: "Cómo influyen la sociedad civil, medios, academia y sector social",
+          subtitle:
+            "Más allá de los partidos: actores sociales que influyen en lo público",
           badges: ["Sección 6"],
-          image: { src: "/images/cover-sociedad-civil.jpg", alt: "Red cívica" },
+          image: { src: "/images/sociedad-civil-democracia.png", alt: "Red cívica" },
         },
       ],
     },
 
-    // SLIDE 2 — ¿Quiénes son? (mapa de actores + ejemplos, todo en una lámina)
+    // SLIDE 2 — ¿Quiénes son? (lista compacta)
     {
       layout: SlideLayouts.GRID2,
       blocks: [
         {
           kind: BlockKinds.PARAGRAPH,
-          title: "¿Qué entendemos por sociedad no política?",
+          title: "¿Qué es la sociedad no política?",
           text:
-            "Conjunto de actores sociales que inciden en lo público sin formar parte directa de partidos, campañas o cargos estatales.",
+            "Actores que inciden en lo público sin pertenecer a partidos ni ocupar cargos.",
         },
         {
           kind: BlockKinds.BULLETS,
           title: "Actores clave",
           items: [
-            "Organizaciones de la sociedad civil (OSC) y ONG",
-            "Medios de comunicación y prensa independiente",
-            "Academia y centros de investigación",
-            "Gremios, sindicatos y asociaciones comunitarias",
-            "Iglesias y organizaciones de base",
-            "Empresas con agendas de responsabilidad social",
-            "Movimientos sociales y plataformas ciudadanas",
+            "OSC/ONG",
+            "Medios y prensa",
+            "Academia (universidades/centros)",
+            "Gremios y comunidades",
+            "Empresas con RSE",
           ],
         },
       ],
     },
 
-    // SLIDE 3 — Mecanismos de incidencia (transparencia, control, agenda)
+    // SLIDE 3 — ¿Cómo inciden? (frases cortas)
     {
       layout: SlideLayouts.TABS,
       blocks: [
         {
           kind: BlockKinds.TABS,
           title: "¿Cómo inciden en la democracia?",
-          // behavior: "static", // <- descomenta para mostrar todo sin clics
           tabs: [
             {
               label: "Transparencia y control",
@@ -65,10 +63,9 @@ const sectionSociedadNoPolitica = {
                 {
                   kind: BlockKinds.BULLETS,
                   items: [
-                    "Monitoreo de políticas públicas y gasto.",
-                    "Observación electoral y veedurías.",
-                    "Litigio estratégico y denuncias de corrupción.",
-                    "Datos abiertos, periodismo de investigación.",
+                    "Vigilancia de gasto y políticas",
+                    "Observación electoral independiente",
+                    "Denuncias e investigaciones públicas",
                   ],
                 },
               ],
@@ -79,9 +76,9 @@ const sectionSociedadNoPolitica = {
                 {
                   kind: BlockKinds.BULLETS,
                   items: [
-                    "Investigación y evidencia para mejores leyes.",
-                    "Foros, cabildos, presupuestos participativos.",
-                    "Educación cívica y alfabetización mediática.",
+                    "Evidencia para mejores leyes",
+                    "Foros y presupuestos participativos",
+                    "Educación cívica y mediática",
                   ],
                 },
               ],
@@ -92,9 +89,9 @@ const sectionSociedadNoPolitica = {
                 {
                   kind: BlockKinds.BULLETS,
                   items: [
-                    "Campañas y movilización pacífica por derechos.",
-                    "Alianzas público–sociales para entregar servicios.",
-                    "Innovación cívica y tecnología para participación.",
+                    "Campañas pacíficas por derechos",
+                    "Alianzas público–sociales",
+                    "Tecnología cívica para participar",
                   ],
                 },
               ],
@@ -104,7 +101,7 @@ const sectionSociedadNoPolitica = {
       ],
     },
 
-    // SLIDE 4 — Impactos típicos (positivos y riesgos) en tarjetas
+    // SLIDE 4 — Impactos (6 tarjetas)
     {
       layout: SlideLayouts.STACK,
       blocks: [
@@ -113,83 +110,47 @@ const sectionSociedadNoPolitica = {
           title: "Impactos en la calidad democrática",
           cards: [
             {
-              title: "Transparencia y rendición de cuentas",
-              content: [
-                "Mayor visibilidad del gasto público y decisiones gubernamentales",
-                "Mecanismos de control ciudadano más efectivos"
-              ],
+              title: "Transparencia",
+              content: ["Más visibilidad del gasto", "Mejor rendición de cuentas"],
               highlight: "positive",
-              icon: "🔍"
+              icon: "🔍",
             },
             {
-              title: "Inclusión de grupos excluidos",
-              content: [
-                "Voz a minorías y sectores históricamente marginados",
-                "Representación más diversa en la toma de decisiones"
-              ],
+              title: "Inclusión",
+              content: ["Voz a grupos excluidos", "Decisiones más diversas"],
               highlight: "positive",
-              icon: "🤝"
+              icon: "🤝",
             },
             {
-              title: "Alertas tempranas",
-              content: [
-                "Detección temprana de abusos de poder",
-                "Prevención de retrocesos democráticos"
-              ],
+              title: "Evidencia",
+              content: ["Investigación rigurosa", "Datos para decidir"],
               highlight: "positive",
-              icon: "⚠️"
+              icon: "📊",
             },
             {
-              title: "Evidencia para políticas",
-              content: [
-                "Investigación académica para mejores leyes",
-                "Datos objetivos para la toma de decisiones"
-              ],
-              highlight: "positive",
-              icon: "📊"
-            },
-            {
-              title: "Captura y cooptación",
-              content: [
-                "Riesgo de financiamiento opaco por élites",
-                "Pérdida de independencia e integridad"
-              ],
+              title: "Captura/Cooptación",
+              content: ["Financiamiento opaco", "Pérdida de independencia"],
               highlight: "negative",
-              icon: "⚡"
+              icon: "⚡",
             },
             {
               title: "Desinformación",
-              content: [
-                "Propagación de noticias falsas",
-                "Erosión de la confianza pública en instituciones"
-              ],
+              content: ["Noticias falsas", "Erosión de confianza"],
               highlight: "negative",
-              icon: "📢"
-            },
-            {
-              title: "Fragmentación",
-              content: [
-                "Duplicidad de esfuerzos entre organizaciones",
-                "Falta de coordinación y coherencia"
-              ],
-              highlight: "negative",
-              icon: "🔀"
+              icon: "📢",
             },
             {
               title: "Criminalización",
-              content: [
-                "Restricciones legales a OSC y prensa libre",
-                "Persecución de defensores de derechos humanos"
-              ],
+              content: ["Restricciones a OSC y prensa", "Persecución de defensores"],
               highlight: "negative",
-              icon: "🚫"
-            }
+              icon: "🚫",
+            },
           ],
         },
       ],
     },
 
-    // SLIDE 5 — Buenas prácticas (en tarjetas)
+    // SLIDE 5 — Buenas prácticas (1 línea por tarjeta)
     {
       layout: SlideLayouts.STACK,
       blocks: [
@@ -198,51 +159,41 @@ const sectionSociedadNoPolitica = {
           title: "Buenas prácticas para potenciar su aporte",
           cards: [
             {
-              title: "Marcos normativos claros",
-              content: [
-                "Registros transparentes para OSC con transparencia financiera obligatoria"
-              ],
+              title: "Leyes claras",
+              content: ["Registros y finanzas transparentes"],
               highlight: "positive",
-              icon: "📋"
+              icon: "📋",
             },
             {
               title: "Protección de defensores",
-              content: [
-                "Garantías legales para periodistas y defensores de DD. HH."
-              ],
+              content: ["Garantías a periodistas y activistas"],
               highlight: "positive",
-              icon: "🛡️"
+              icon: "🛡️",
             },
             {
-              title: "Espacios de colaboración",
-              content: [
-                "Mesas mixtas Estado–academia–OSC para co-crear políticas"
-              ],
+              title: "Colaboración",
+              content: ["Mesas Estado–academia–sociedad civil"],
               highlight: "positive",
-              icon: "🤝"
+              icon: "🤝",
             },
             {
-              title: "Ecosistemas de datos",
-              content: [
-                "Plataformas de datos abiertos y sistemas de evaluación independiente"
-              ],
+              title: "Datos abiertos",
+              content: ["Plataformas y evaluación independiente"],
               highlight: "positive",
-              icon: "📊"
+              icon: "📊",
             },
             {
               title: "Educación cívica",
-              content: [
-                "Formación cívica continua y participación inclusiva"
-              ],
+              content: ["Formación continua e inclusiva"],
               highlight: "positive",
-              icon: "📚"
-            }
+              icon: "📚",
+            },
           ],
         },
       ],
     },
 
-    // SLIDE 6 — Cierre
+    // SLIDE 6 — Cierre (1 frase)
     {
       layout: SlideLayouts.STACK,
       blocks: [
@@ -250,7 +201,7 @@ const sectionSociedadNoPolitica = {
           kind: BlockKinds.CONCLUSION,
           title: "Cierre",
           text:
-            "La sociedad no política fortalece la democracia cuando promueve información de calidad, participación pacífica y control ciudadano efectivo, sin sustituir a la representación ni a las instituciones.",
+            "La sociedad no política complementa y fortalece a las instituciones con información, participación y control ciudadano.",
         },
       ],
     },
